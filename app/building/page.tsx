@@ -45,39 +45,28 @@ export default function BuildingPage() {
     },
   }
 
-  // Sample blog posts data
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Implementing Zero Trust Security in DevOps Pipelines",
-      excerpt: "Learn how to integrate security at every step of your CI/CD pipeline with practical examples and best practices.",
-      date: "May 10, 2025",
-      tags: ["Security", "DevOps", "CI/CD"],
-      readTime: "8 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      id: 2,
-      title: "Kubernetes Security Hardening: A Comprehensive Guide",
-      excerpt: "Discover essential techniques to secure your Kubernetes clusters against common vulnerabilities and threats.",
-      date: "April 22, 2025",
-      tags: ["Kubernetes", "Security", "Cloud Native"],
-      readTime: "12 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      id: 3,
-      title: "Infrastructure as Code: Security Best Practices",
-      excerpt: "Explore strategies to ensure your infrastructure code is secure, compliant, and resilient against attacks.",
-      date: "March 15, 2025",
-      tags: ["IaC", "Terraform", "Security"],
-      readTime: "10 min read",
-      image: "/placeholder.jpg"
-    }
-  ]
+  // Blog posts removed as per user request
 
   // Sample projects data
   const projects = [
+    {
+      id: 101,
+      title: "DockerShell: Web-based Docker CLI Tool",
+      description: "A web-based shell interface for Docker, enabling users to run Docker commands securely from the browser. Built with Vercel, React, and Node.js.",
+      technologies: ["Docker", "Node.js", "React", "Vercel"],
+      githubUrl: "https://github.com/prateekkanurkar/v0-dockershell-cli-tool", // Replace with actual repo if available
+      demoUrl: "https://v0-dockershell-cli-tool.vercel.app/",
+      image: "/DockerShell.png"
+    },
+    {
+      id: 102,
+      title: "Proter: Automated Code Review (AI)",
+      description: "An AI-powered code review assistant that integrates with GitHub/GitLab CI, analyzes pull requests, and provides automated reviews using LLMs.",
+      technologies: ["AI", "Code Review", "GitHub", "GitLab", "Vercel"],
+      githubUrl: "https://github.com/prateekkanurkar/v0-proter-prateek-automated-code-review", // Replace with actual repo if available
+      demoUrl: "https://v0-proter-prateek-automated-code-review.vercel.app/",
+      image: "/Proter.png"
+    },
     {
       id: 1,
       title: "SecureCI Pipeline Framework",
@@ -87,24 +76,8 @@ export default function BuildingPage() {
       demoUrl: "#",
       image: "/placeholder.jpg"
     },
-    {
-      id: 2,
-      title: "Cloud Security Posture Monitor",
-      description: "A tool that continuously monitors cloud infrastructure for security misconfigurations and compliance violations, with automated remediation capabilities.",
-      technologies: ["AWS", "Terraform", "Go", "React"],
-      githubUrl: "https://github.com",
-      demoUrl: "#",
-      image: "/placeholder.jpg"
-    },
-    {
-      id: 3,
-      title: "Container Security Scanner",
-      description: "A lightweight scanner that identifies vulnerabilities in container images and provides actionable remediation steps.",
-      technologies: ["Docker", "Kubernetes", "Python", "CVE Database"],
-      githubUrl: "https://github.com",
-      demoUrl: "#",
-      image: "/placeholder.jpg"
-    }
+
+
   ]
 
   return (
@@ -159,11 +132,16 @@ export default function BuildingPage() {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="mb-10 text-center"
+          className="mb-10 text-center rounded-2xl bg-primary/10 shadow-lg border border-primary/30 px-6 py-8 max-w-2xl mx-auto relative"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Currently Building</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore my latest projects and blog posts about DevSecOps, cloud security, and modern infrastructure practices.
+          <div className="flex items-center justify-center mb-2">
+            <span className="inline-flex items-center justify-center rounded-full bg-primary text-background mr-3 shadow-md p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 13l4 4L21 7" /></svg>
+            </span>
+            <h1 className="text-3xl md:text-4xl font-bold mb-0 border-l-4 border-primary pl-4 drop-shadow-lg">Currently Building</h1>
+          </div>
+          <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+            A showcase of hands-on <span className="text-primary font-semibold">DevSecOps</span>, automation, and cloud engineering projects.
           </p>
         </motion.div>
 
@@ -223,55 +201,7 @@ export default function BuildingPage() {
             </motion.div>
           </TabsContent>
           
-          {/* Blog Posts Tab */}
-          <TabsContent value="blog">
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {blogPosts.map((post) => (
-                <motion.div key={post.id} variants={fadeIn}>
-                  <Card className="h-full flex flex-col overflow-hidden hover:shadow-md hover:shadow-primary/5 transition-all backdrop-blur-sm border-border">
-                    <div className="relative h-48 w-full overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform hover:scale-105"
-                      />
-                    </div>
-                    <CardHeader>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Calendar className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-xs text-muted-foreground">{post.date}</span>
-                        <Clock className="h-4 w-4 text-muted-foreground ml-2" />
-                        <span className="text-xs text-muted-foreground">{post.readTime}</span>
-                      </div>
-                      <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary">
-                            <Tag className="h-3 w-3 mr-1" />
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      <Button className="w-full" variant="outline">
-                        Read Article
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-          </TabsContent>
+
         </Tabs>
       </main>
 

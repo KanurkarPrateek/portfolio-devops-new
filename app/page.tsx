@@ -239,7 +239,7 @@ export default function Portfolio() {
             className="font-bold text-xl flex items-center gap-2"
           >
             <Terminal className="h-5 w-5 text-primary" />
-            <span>dev@portfolio:~$</span>
+            <span>de@prateek:~$</span>
           </motion.div>
           <nav className="hidden md:flex gap-6">
             {["about", "skills", "certifications", "achievements", "contact"].map((section, index) => (
@@ -374,7 +374,7 @@ export default function Portfolio() {
           variants={fadeIn}
           className="py-8 md:py-12 flex flex-col md:flex-row gap-8 items-center"
         >
-          <motion.div variants={slideInFromLeft} className="md:w-1/3 flex justify-center">
+          <motion.div variants={slideInFromLeft} className="md:w-1/3 flex flex-col items-center">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg shadow-primary/10">
               <Image src="/prateekk.jpg" alt="Profile" fill className="object-cover scale-125" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
@@ -389,6 +389,31 @@ export default function Portfolio() {
                 }}
                 className="absolute inset-0 rounded-full"
               />
+            </div>
+            <div className="mt-12 w-full flex justify-center">
+              <Button 
+                variant="secondary" 
+                className="group relative overflow-hidden neon-border"
+                style={{
+                  border: '2px solid #22ff8c',
+                  boxShadow: '0 0 0 2px #22ff8c, 0 0 4px 1.5px #22ff8c80',
+                  filter: 'drop-shadow(0 0 2px #22ff8c80)',
+                  transition: 'box-shadow 0.3s, filter 0.3s',
+                }}
+                onMouseOver={e => {
+                  e.currentTarget.style.boxShadow = '0 0 0 2.5px #22ff8c, 0 0 8px 3px #22ff8c66';
+                  e.currentTarget.style.filter = 'drop-shadow(0 0 4px #22ff8c66)';
+                }}
+                onMouseOut={e => {
+                  e.currentTarget.style.boxShadow = '0 0 0 2px #22ff8c, 0 0 4px 1.5px #22ff8c80';
+                  e.currentTarget.style.filter = 'drop-shadow(0 0 2px #22ff8c80)';
+                }}
+                onClick={() => window.location.href = '/building'}
+              >
+                <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                <Code className="mr-2 h-4 w-4 group-hover:animate-pulse relative z-10" />
+                <span className="relative z-10">Currently Building</span>
+              </Button>
             </div>
           </motion.div>
           <motion.div variants={slideInFromRight} className="md:w-2/3">
@@ -432,11 +457,20 @@ export default function Portfolio() {
               </motion.p>
               <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="flex flex-wrap gap-4 justify-center">
                 <motion.div variants={scaleIn}>
-                  <Button className="group relative overflow-hidden">
-                    <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                    <FileCode className="mr-2 h-4 w-4 group-hover:animate-pulse relative z-10" />
-                    <span className="relative z-10">Download CV</span>
-                  </Button>
+                  <a
+                    href="/Resume_Prateek_Kanurkar.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download CV (opens in new tab)"
+                    className="group relative overflow-hidden"
+                    style={{ display: 'inline-block' }}
+                  >
+                    <Button type="button" className="group relative overflow-hidden">
+                      <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                      <FileCode className="mr-2 h-4 w-4 group-hover:animate-pulse relative z-10" />
+                      <span className="relative z-10">Download CV</span>
+                    </Button>
+                  </a>
                 </motion.div>
                 <motion.div variants={scaleIn}>
                   <Button variant="outline" className="group relative overflow-hidden">
@@ -445,17 +479,7 @@ export default function Portfolio() {
                     <span className="relative z-10">Contact Me</span>
                   </Button>
                 </motion.div>
-                <motion.div variants={scaleIn}>
-                  <Button 
-                    variant="secondary" 
-                    className="group relative overflow-hidden"
-                    onClick={() => window.location.href = '/building'}
-                  >
-                    <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                    <Code className="mr-2 h-4 w-4 group-hover:animate-pulse relative z-10" />
-                    <span className="relative z-10">Currently Building</span>
-                  </Button>
-                </motion.div>
+
               </motion.div>
             </motion.div>
           </motion.div>

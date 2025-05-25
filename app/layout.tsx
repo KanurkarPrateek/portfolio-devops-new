@@ -4,9 +4,9 @@ import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "DevOps Engineer Portfolio",
-  description: "Professional portfolio showcasing DevOps engineering skills and experience",
-    generator: 'v0.dev'
+  title: "Prateek Kanurkar",
+  description: "Portfolio website of Prateek Kanurkar - DevSecOps Engineer, cloud builder, and automation enthusiast.",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
