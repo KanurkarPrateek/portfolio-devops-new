@@ -52,8 +52,8 @@ export default function BuildingPage() {
     {
       id: 101,
       title: "DockerShell: Web-based Docker CLI Tool",
-      description: "A web-based shell interface for Docker, enabling users to run Docker commands securely from the browser. Built with Vercel, React, and Node.js.",
-      technologies: ["Docker", "Node.js", "React", "Vercel"],
+      description: "A web-based shell interface for Docker, enabling users to run Docker commands securely from the browser. Built with Vercel, Docker, and Python.",
+      technologies: ["Docker", "Python", "Vercel"],
       githubUrl: "https://github.com/prateekkanurkar/v0-dockershell-cli-tool", // Replace with actual repo if available
       demoUrl: "https://v0-dockershell-cli-tool.vercel.app/",
       image: "/DockerShell.png"
