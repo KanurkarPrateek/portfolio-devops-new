@@ -573,6 +573,7 @@ export default function Portfolio() {
                   { name: "Hugging Face", logo: "/logos/huggingface.svg" },
                   { name: "LangChain", logo: "/logos/langchain.svg" },
                   { name: "Anthropic", logo: "/logos/anthropic.svg" },
+                  { name: "n8n", logo: "/logos/n8n.svg" },
                 ],
               },
             ].map((skill, index) => (
@@ -596,41 +597,40 @@ export default function Portfolio() {
             </motion.div>
             <motion.div variants={staggerContainer} className="flex flex-wrap gap-2">
               {[
-                "Prometheus",
-                "Grafana",
-                "ELK Stack",
-                "Datadog",
-                "New Relic",
-                "Nginx",
-                "HAProxy",
-                "Istio",
-                "Vault",
-                "Consul",
-                "Git",
-                "Jira",
-                "Confluence",
-                "Slack",
-                "PagerDuty",
-                "AWS Lambda",
-                "S3",
+                "Athena",
+                "EMR",
+                "Glue",
+                "Lake Formation",
+                "Kinesis Data Firehose",
+                "Kinesis Data Streams",
+                "Managed Service for Apache Flink",
+                "Managed Streaming for Apache Kafka (MSK)",
+                "OpenSearch Service",
+                "QuickSight",
+                "Batch",
                 "EC2",
+                "Lambda",
+                "Serverless Application Model (SAM)",
+                "Elastic Container Registry (ECR)",
+                "Elastic Container Service (ECS)",
+                "Elastic Kubernetes Service (EKS)",
+                "DocumentDB (with MongoDB compatibility)",
+                "DynamoDB",
+                "Keyspaces (for Apache Cassandra)",
+                "MemoryDB for Redis",
+                "Neptune",
                 "RDS",
-                "CloudFront",
-                "GKE",
-                "GCE",
-                "Cloud Functions",
-                "BigQuery",
-                "Cloud Storage",
-                "Azure AKS",
-                "Azure Functions",
-                "Cosmos DB",
-                "Blob Storage",
-                "Azure DevOps",
+                "Redshift",
+                "Backup",
+                "Elastic Block Store (EBS)",
+                "Elastic File System (EFS)",
+                "S3",
+                // Homelabbing tools
+                "Proxmox",
+                "n8n",
               ].map((tool, index) => (
                 <motion.div key={tool} variants={scaleIn} custom={index}>
-                  <Badge variant="outline" className="bg-background/50 hover:bg-primary/10 transition-colors">
-                    {tool}
-                  </Badge>
+                  <Badge variant="outline" className="bg-background/50 hover:bg-primary/10 transition-colors">{tool}</Badge>
                 </motion.div>
               ))}
             </motion.div>
